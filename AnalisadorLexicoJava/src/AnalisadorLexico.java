@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //
-// --------------- Analisador LÈxico ---------------
+// --------------- Analisador L√©xico ---------------
 //	Autor : Mateus Santos Costa
 //	e-mail: mateus.costa@estudante.ifb.edu.br
 //	
@@ -72,6 +72,10 @@ public class AnalisadorLexico {
 			return 1;
 		case "Read":
 			return 1;
+		case "space":
+			return 1;
+		case "":
+			return 1;
 		default:
 			return 0;
 		}
@@ -83,7 +87,7 @@ public class AnalisadorLexico {
 		BufferedReader buffRead = new BufferedReader(new FileReader(path));
 		String linha = "";
 
-		// Lista que separar· o .txt em 'linhas'
+		// Lista que separar√° o .txt em 'linhas'
 		List<String> linhas = new ArrayList<String>();
 
 		// leitura do arquivo
@@ -95,7 +99,7 @@ public class AnalisadorLexico {
 		}
 		buffRead.close();
 
-		// String que receber· a transformaÁ„o de cada linha em colunas
+		// String que receber√° a transforma√ß√£o de cada linha em colunas
 		String[] colum = new String[11];
 
 		int verificador = 0;
@@ -106,21 +110,21 @@ public class AnalisadorLexico {
 			// System.out.println("Coluna: " + i);
 			int j = 0;
 			for (String parametro : colum) {
-				// System.out.println(abc);
+				//System.out.println(parametro);
 				verificador = compara(parametro);
 				// controlLinha++;
 				j++;
 				if (verificador != 1) {
 					System.out.println("Erro na linha: " + (i + 1) + " Coluna: " + j);
 					msg=1;
-					break;
+					continue;
 				}
 
 			}
 		}
 		if(msg ==0)
 		{
-			System.out.println("An·lise LÈxica conlcuÌda com sucesso");
+			System.out.println("An√°lise L√©xica conlcu√≠da com sucesso");
 		}
 	}
 }
