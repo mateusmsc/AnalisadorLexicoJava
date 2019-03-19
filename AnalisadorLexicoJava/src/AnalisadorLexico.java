@@ -72,8 +72,6 @@ public class AnalisadorLexico {
 			return 1;
 		case "Read":
 			return 1;
-		case "space":
-			return 1;
 		case "":
 			return 1;
 		default:
